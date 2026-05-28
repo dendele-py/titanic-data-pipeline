@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-from sqlalchemy import create_engine
 
 # -------------------------
 # Page setup
@@ -8,19 +7,12 @@ from sqlalchemy import create_engine
 st.set_page_config(page_title="Titanic Dashboard", layout="wide")
 
 st.title("🚢 Titanic Data Analytics Dashboard")
-st.write("Interactive analysis using PostgreSQL + Streamlit")
+st.write("Interactive analysis using Streamlit + CSV dataset")
 
 # -------------------------
-# DB connection
+# Load dataset (NO DATABASE)
 # -------------------------
-engine = create_engine(
-    "postgresql+psycopg2://postgres:Mitsubishi@localhost:5432/titanic_db"
-)
-
-# -------------------------
-# Load full dataset
-# -------------------------
-df = pd.read_sql('SELECT * FROM titanic', engine)
+df = pd.read_csv("data/titanic.csv")
 
 # -------------------------
 # Sidebar filters
