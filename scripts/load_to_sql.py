@@ -2,7 +2,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 # Load Titanic CSV
-df = pd.read_csv("../data/titanic.csv")
+df = pd.read_csv("data/titanic.csv")
 
 # Clean data
 df["Age"] = df["Age"].fillna(df["Age"].median())
